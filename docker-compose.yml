@@ -12,11 +12,12 @@ services:
             - "80:80"
         volumes:
             # - ./src:/var/www/html
-            # - ../try-laravel:/var/www/html
+            - ../try-laravel:/var/www/html/tmi
             - ../try-laravel:/var/www/html/try-laraval
             - ../shayna-backend-laravue:/var/www/html/shayna-backend-laravue
             - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
             - ./nginx/laravue.conf:/etc/nginx/conf.d/laravue.conf
+            - ./nginx/tmi.conf:/etc/nginx/conf.d/tmi.conf
         depends_on:
             - php
         networks:
@@ -33,9 +34,10 @@ services:
         container_name: php
         volumes:
             # - ./src:/var/www/html
-            # - ../try-laravel:/var/www/html
+            - ../tmi:/var/www/html/tmi
             - ../try-laravel:/var/www/html/try-laraval
             - ../shayna-backend-laravue:/var/www/html/shayna-backend-laravue
+            - ./php/php.ini:/usr/local/etc/php/php.ini
         ports:
             - "9000:9000"
         networks:
