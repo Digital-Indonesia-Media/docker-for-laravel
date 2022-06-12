@@ -12,7 +12,7 @@ services:
             - "80:80"
         volumes:
             # - ./src:/var/www/html
-            - ../try-laravel:/var/www/html/tmi
+            - ../tmi:/var/www/html/tmi
             - ../try-laravel:/var/www/html/try-laraval
             - ../shayna-backend-laravue:/var/www/html/shayna-backend-laravue
             - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
