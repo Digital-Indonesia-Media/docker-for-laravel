@@ -12,12 +12,10 @@ services:
             - "80:80"
         volumes:
             # - ./src:/var/www/html
-            - ../tmi:/var/www/html/tmi
-            - ../try-laravel:/var/www/html/try-laraval
-            - ../shayna-backend-laravue:/var/www/html/shayna-backend-laravue
+            - ../bahasa-booster:/var/www/html/bahasa-booster
             - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
-            - ./nginx/laravue.conf:/etc/nginx/conf.d/laravue.conf
-            - ./nginx/tmi.conf:/etc/nginx/conf.d/tmi.conf
+            - ../aneka_logistic:/var/www/html/aneka_logistic
+            - ./nginx/aneka.conf:/etc/nginx/conf.d/aneka.conf
         depends_on:
             - php
         networks:
@@ -34,9 +32,8 @@ services:
         container_name: php
         volumes:
             # - ./src:/var/www/html
-            - ../tmi:/var/www/html/tmi
-            - ../try-laravel:/var/www/html/try-laraval
-            - ../shayna-backend-laravue:/var/www/html/shayna-backend-laravue
+            - ../bahasa-booster:/var/www/html/bahasa-booster
+            - ../aneka_logistic:/var/www/html/aneka_logistic
             - ./php/php.ini:/usr/local/etc/php/php.ini
         ports:
             - "9000:9000"
