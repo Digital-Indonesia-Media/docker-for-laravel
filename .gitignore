@@ -1,2 +1,2 @@
-mysql/*
-./nginx/*.conf
+nginx/*
+!nginx/default.conf.example
