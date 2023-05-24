@@ -20,6 +20,8 @@ services:
             - ./nginx/tmi.conf:/etc/nginx/conf.d/tmi.conf
             - ../lkihi-ui:/var/www/html/lkihi-ui
             - ./nginx/lkihi.conf:/etc/nginx/conf.d/lkihi.conf
+            - ../absensi:/var/www/html/absensi
+            - ./nginx/absensi.conf:/etc/nginx/conf.d/absensi.conf
         depends_on:
             - php
         networks:
@@ -41,6 +43,7 @@ services:
             - ../aneka_logistic:/var/www/html/aneka_logistic
             - ../tmi:/var/www/html/tmi
             - ../lkihi-ui:/var/www/html/lkihi-ui
+            - ../absensi:/var/www/html/absensi
         ports:
             - "9000:9000"
         networks:
