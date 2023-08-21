@@ -1,7 +1,3 @@
-# FROM php:7.2-fpm-alpine
-
-# RUN docker-php-ext-install pdo pdo_mysql
-
 FROM php:7.4-fpm
 
 # Arguments defined in docker-compose.yml
@@ -17,10 +13,8 @@ RUN apt-get update && apt-get install -y \
     libxml2-dev \
     libzip-dev \
     zip \
-    unzip
-
-#install some base extensions
-# RUN docker-php-ext-install zip
+    unzip \
+    poppler-utils
 
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
