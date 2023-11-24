@@ -11,21 +11,8 @@ services:
         ports:
             - "80:80"
         volumes:
-            # - ./src:/var/www/html
             - ../:/var/www/html/
             - ./nginx/:/etc/nginx/conf.d/
-            # - ../bahasa-booster:/var/www/html/bahasa-booster
-            # - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
-            # - ../aneka_logistic:/var/www/html/aneka_logistic
-            # - ./nginx/aneka.conf:/etc/nginx/conf.d/aneka.conf
-            # - ../tmi:/var/www/html/tmi
-            # - ./nginx/tmi.conf:/etc/nginx/conf.d/tmi.conf
-            # - ../lkihi-ui:/var/www/html/lkihi-ui
-            # - ./nginx/lkihi.conf:/etc/nginx/conf.d/lkihi.conf
-            # - ../absensi:/var/www/html/absensi
-            # - ./nginx/absensi.conf:/etc/nginx/conf.d/absensi.conf
-            # - ../ppid-web:/var/www/html/ppid-web
-            # - ./nginx/ppid.conf:/etc/nginx/conf.d/ppid.conf
         depends_on:
             - php
         networks:
@@ -43,12 +30,6 @@ services:
         volumes:
             - ./php/php.ini:/usr/local/etc/php/php.ini
             - ../:/var/www/html
-            # - ../bahasa-booster:/var/www/html/bahasa-booster
-            # - ../aneka_logistic:/var/www/html/aneka_logistic
-            # - ../tmi:/var/www/html/tmi
-            # - ../lkihi-ui:/var/www/html/lkihi-ui
-            # - ../absensi:/var/www/html/absensi
-            # - ../ppid-web:/var/www/html/ppid-web
         ports:
             - "9000:9000"
         networks:
