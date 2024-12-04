@@ -30,7 +30,7 @@ services:
         volumes:
             - ./php/php.ini:/usr/local/etc/php/php.ini
             - ../:/var/www/html
-        ports:
-            - "9000:9000"
+        expose:
+            - "9000" # Expose PHP-FPM port only to linked services, not to the host
         networks:
             - laravel
